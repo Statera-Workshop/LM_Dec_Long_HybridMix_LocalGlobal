@@ -1,0 +1,83 @@
+{
+ "model": "hyb_mix",
+ "repo": "(new) hybrid: GRU + local and global attention",
+ "target_repo": "LM_Dec_Long_HybridMix_LocalGlobal",
+ "category": "Long",
+ "upstream": "lucidrains/x-transformers (MIT), pip 2.31.7 + torch.nn",
+ "unified": [
+  "GRU layer, 3 sliding-window (256) RoPE layers, then 3 global NoPE layers"
+ ],
+ "torch": "2.5.1+cu124",
+ "gpu": "NVIDIA GeForce RTX 3070 Ti",
+ "stage": "scaling",
+ "started": "2026-11-12 10:27:09",
+ "smoke": false,
+ "rows": [
+  {
+   "len": 512,
+   "train": {
+    "peak_mb": 155.9,
+    "ms": 36.9,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 49.5,
+    "ms": 17.5,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 1024,
+   "train": {
+    "peak_mb": 268.9,
+    "ms": 54.0,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 79.7,
+    "ms": 22.9,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 2048,
+   "train": {
+    "peak_mb": 589.0,
+    "ms": 72.9,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 231.8,
+    "ms": 37.4,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 4096,
+   "train": {
+    "peak_mb": 1526.5,
+    "ms": 159.9,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 794.1,
+    "ms": 77.5,
+    "dtype": "bf16"
+   }
+  },
+  {
+   "len": 8192,
+   "train": {
+    "peak_mb": 5435.6,
+    "ms": 374.0,
+    "dtype": "bf16"
+   },
+   "infer": {
+    "peak_mb": 2950.8,
+    "ms": 190.5,
+    "dtype": "bf16"
+   }
+  }
+ ],
+ "seconds": 6.6
+}
